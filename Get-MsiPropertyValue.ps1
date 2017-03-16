@@ -16,6 +16,7 @@
 #>
 
 <#
+
 .Synopsis
     Gets a property value from a Windows Installer Database.
 .Description
@@ -46,6 +47,7 @@
     https://dotps1.github.io
 .Link
     https://grposh.github.io
+
 #>
 
     
