@@ -3,7 +3,7 @@
 ---
 
 Repository to hold script-functions that are published to the PowerShell Gallery.
-These are functions that I havent really made into a module yet.
+These are functions that I havent really made into a module yet or don't really fit into any of my other custom modules.
 So they are contained in single .ps1 files that can be installed with `Install-Script`.
 
 ---
@@ -12,7 +12,7 @@ So they are contained in single .ps1 files that can be installed with `Install-S
 
 * Get-MsiPropertyValue
 
-```PowerShell
+```
 PS C:\> Get-MsiPropertyValue -Path .\jre1.8.0_121.msi -Property ProductVersion, ProductCode
 Name             ProductVersion ProductCode
 ----             -------------- -----------
