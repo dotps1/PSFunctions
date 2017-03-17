@@ -1,17 +1,17 @@
 <#PSScriptInfo
 
 .Version
-	1.4
+    1.4
 .Guid
-	6a18515f-73d3-4fb4-884f-412395aa5054
+    6a18515f-73d3-4fb4-884f-412395aa5054
 .Author
-	Thomas Malkewitz @dotps1
+    Thomas Malkewitz @dotps1
 .Tags
-	PSCredential Credential Function PSFunction
+    PSCredential Credential Function PSFunction
 .ProjectUri
-	 https://github.com/dotps1/PSFunctions
+    https://github.com/dotps1/PSFunctions
 .ReleaseNotes
-	Removed pipeline support and PSCredential Array functionality.
+    Removed pipeline support and PSCredential Array functionality.
     This Script-Function can now only be used to test one credential at a time.
 
 #> 
