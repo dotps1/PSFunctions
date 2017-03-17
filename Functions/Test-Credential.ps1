@@ -21,7 +21,7 @@
 .Synopsis
     Test if a Credential Object is valid.
 .Description 
-    Simulates an Authentication Request in a Domain envrionment using a PSCredential Object. Returns $true if both Username and Password pair are valid. 
+    Simulates an Authentication Request in a Domain environment using a PSCredential Object. Returns $true if both Username and Password pair are valid. 
 .Inputs
     System.Management.Automation.PSCredential
 .Outputs
@@ -31,7 +31,7 @@
     Credential object to test.
 .Parameter Domain
     System.String
-    The domain to test the Credenital against.  Defaults to the domain used in the Credential Parameter.
+    The domain to test the Credential against.  Defaults to the domain used in the Credential Parameter.
 .Example
     PS C:\> Test-Credential -Credential (Get-Credential)
     True

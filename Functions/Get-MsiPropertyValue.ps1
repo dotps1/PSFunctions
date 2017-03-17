@@ -20,7 +20,7 @@
 .Synopsis
     Gets a property value from a Windows Installer Database.
 .Description
-    Opens a Windows Installer Database (.msi) and querys for the specified property value.
+    Opens a Windows Installer Database (.msi) and queries for the specified property value.
 .Inputs
     System.String
 .Outputs
@@ -135,7 +135,7 @@ process {
 }
 
 end {
-    [Void][System.Runtime.InteropServices.Marshal]::ReleaseComObject(
+    [System.Runtime.InteropServices.Marshal]::ReleaseComObject(
         $windowsInstaller
-    )
+    ) | Out-Null
 }

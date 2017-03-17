@@ -11,12 +11,12 @@
 .ProjectUri
     https://github.com/dotps1/PSFunctions
 .ReleaseNotes 
-    Intial Release.
+    Initial Release.
 #>
 
 <#
 .Synopsis
-    Converts a path to the 8.3 equivelent.
+    Converts a path to the 8.3 equivalent.
 .Description
     Converts each element of a file object path to the 8.3 path and return the short path string. 
 .Inputs
