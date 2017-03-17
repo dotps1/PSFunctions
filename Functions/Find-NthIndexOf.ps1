@@ -52,6 +52,8 @@
 .Link
     https://dotps1.github.io
 .Link
+    https://www.powershellgallery.com/packages/Find-NthIndexOf
+.Link
     https://grposh.github.io
 
 #>
