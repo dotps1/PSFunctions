@@ -44,9 +44,12 @@
 .Link
     https://dotps1.github.io
 .Link
+    https://www.powershellgallery.com/packages/Test-Credential
+.Link
     https://grposh.github.io
 
 #>
+
 
 [CmdletBinding()]
 [OutputType(

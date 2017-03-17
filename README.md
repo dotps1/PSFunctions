@@ -10,6 +10,16 @@ So they are contained in single .ps1 files that can be installed with `Install-S
 
 ## Current Functions:
 
+### ConvertTo-ShortPath
+
+```
+PS C:\Users\dotps1\Documents\GitHub\PSFunctions\Functions> ConvertTo-ShortPath
+C:\Users\dotps1\DOCUME~1\GitHub\PSFUNC~1\FUNCTI~1
+
+PS C:\> Get-Item $env:WinDir\System32\WindowsPowerShell\v1.0\powershell.exe | .\ConvertTo-ShortPath.ps1
+C:\Windows\System32\WINDOW~1\v1.0\powershell.exe
+```
+
 ### Get-MsiPropertyValue
 
 ```

@@ -9,7 +9,7 @@
 .Tags 
     MSI, PSCustomObject
 .ProjectUri
-    https://gist.github.com/dotps1/2c6f21ed0c9d47dae300ea712cfe8f4c 
+    https://github.com/dotps1/PSFunctions
 .ReleaseNotes
     Initial Release.
 
@@ -45,6 +45,8 @@
     jre1.8.0_121.msi 8.0.1210.13    {26A24AE4-039D-4CA4-87B4-2F32180121F0}
 .Link
     https://dotps1.github.io
+.Link
+    https://www.powershellgallery.com/packages/Get-MsiPropertyValue
 .Link
     https://grposh.github.io
 
