@@ -1,7 +1,7 @@
 <#PSScriptInfo
 
 .Version
-    1.0
+    1.1
 .Guid
     a4de76e8-d5c6-4592-8b04-324acbe17355
 .Author
@@ -11,7 +11,7 @@
 .ProjectUri
     https://github.com/dotps1/PSFunctions
 .ReleaseNotes 
-    Initial Release.
+    Move escaping the regex value from begin block to the process block to handle better pipeline support.
 #>
 
 <#
@@ -95,23 +95,22 @@ param (
     $IgnoreCase
 )
 
-begin {
+process {
     $Value = [Regex]::Escape(
         $Value
     )
-}
 
-process {
     foreach ($targetValue in $Target) {
+        $regex = "(($Value).*?){$Nth}" 
         if ($IgnoreCase.IsPresent) {
-            $match = [Regex]::Match(
-                $targetValue, "(?i)(($Value).*?){$Nth}" 
+            $regex = $regex.Insert(
+                0, "(?i)"
             )
-        } else {
-            $match = [Regex]::Match(
-                $targetValue, "(($Value).*?){$Nth}" 
-            )
-        }
+        } 
+
+        $match = [Regex]::Match(
+            $targetValue,  $regex
+        )
 
         if ($match.Success) {
             Write-Output -InputObject $match.Groups[2].Captures[$Nth - 1].Index
