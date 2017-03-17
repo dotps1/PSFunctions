@@ -3,12 +3,10 @@
 ---
 
 Repository to hold script-functions that are published to the PowerShell Gallery.
-These are functions that I havent really made into a module yet or don't really fit into any of my other custom modules.
+These are functions that I haven't really made into a module yet or don't really fit into any of my other custom modules.
 So they are contained in single .ps1 files that can be installed with `Install-Script`.
 
 ---
-
-## Current Functions:
 
 ### ConvertTo-ShortPath
 
@@ -18,6 +16,21 @@ C:\Users\dotps1\DOCUME~1\GitHub\PSFUNC~1\FUNCTI~1
 
 PS C:\> Get-Item $env:WinDir\System32\WindowsPowerShell\v1.0\powershell.exe | .\ConvertTo-ShortPath.ps1
 C:\Windows\System32\WINDOW~1\v1.0\powershell.exe
+```
+
+### Find-NthIndexOf
+
+```
+PS C:\> Find-NthIndexOf -Target "CN=me,OU=Users,DC=domain,DC=org" -Value "=" -Nth 2
+8
+
+
+PS C:\> ($dn = "CN=dotps1,OU=Users,DC=domain,DC=org").SubString((Find-NthIndexOf -Target $dn -Value "=" -Nth 2) - 2)
+OU=Users,DC=domain,DC=org
+
+
+PS C:\> Find-NthIndexOf -Target "Hello World." -Value "w" -IgnoreCase
+6
 ```
 
 ### Get-MsiPropertyValue
