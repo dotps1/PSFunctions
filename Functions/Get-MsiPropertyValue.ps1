@@ -22,12 +22,14 @@
 .Description
     Opens a Windows Installer Database (.msi) and querys for the specified property value.
 .Inputs
-    System.String.
+    System.String
 .Outputs
-    System.String.
+    System.String
 .Parameter Path
+    System.String
     The location of the Windows Installer Database.
 .Parameter Property
+    System.String
     The Property to get the value of.
 .Example
     PS C:\> Get-MsiPropertyValue -Path .\jre1.8.0_121.msi -Property ProductVersion, ProductCode

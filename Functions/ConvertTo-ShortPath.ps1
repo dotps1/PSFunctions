@@ -20,9 +20,9 @@
 .Description
     Converts each element of a file object path to the 8.3 path and return the short path string. 
 .Inputs
-    System.String.
+    System.String
 .Outputs
-    System.String.
+    System.String
 .Parameter Path
     System.String
     Path to convert.

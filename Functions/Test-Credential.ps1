@@ -27,8 +27,10 @@
 .Outputs
     System.Boolean
 .Parameter Credential
+    System.Management.Automation.PSCredential
     Credential object to test.
 .Parameter Domain
+    System.String
     The domain to test the Credenital against.  Defaults to the domain used in the Credential Parameter.
 .Example
     PS C:\> Test-Credential -Credential (Get-Credential)
