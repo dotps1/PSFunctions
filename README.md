@@ -51,6 +51,19 @@ jre1.8.0_111.msi 8.0.1110.14    {26A24AE4-039D-4CA4-87B4-2F32180111F0}
 jre1.8.0_121.msi 8.0.1210.13    {26A24AE4-039D-4CA4-87B4-2F32180121F0}
 ```
 
+### New-ADUserName
+
+```
+PS C:\> New-Username -FirstName John -LastName Doe
+
+jdoe
+
+
+PS C:\> New-Username -FirstName Jane -LastName Doe -MiddleName Ala
+
+jadoe
+```
+
 ### New-NetStaticIPAddress
 
 ```
