@@ -52,11 +52,14 @@
     RSAT 8.1:  http://www.microsoft.com/en-us/download/details.aspx?id=39296
     RSAT 10:   http://www.microsoft.com/en-us/download/details.aspx?id=45520
 .Link
-    http://dotps1.github.io
+    https://dotps1.github.io
+.Link
+    https://www.powershellgallery.com/packages/New-ADUserName
 .Link
     https://grposh.github.io
 
 #>
+
 
 #requires -Modules ActiveDirectory
 
@@ -104,13 +107,11 @@ if (-not ([String]::IsNullOrEmpty($OtherName))) {
     }
 }
 
-foreach ($char in $FirstName.ToCharArray()) {
-    $prefix += $char
+for ($i = 1; $i -lt $FirstName.Length; $i++) {
+    $prefix += $FirstName.ToCharArray()[$i]
     $tertiaryUserName = ($prefix + $LastName) -replace $pattern,""
 
-    if (-not ($tertiaryUserName -eq $primaryUserName)) {
-        if ((Get-ADUser -Filter { SamAccountName -eq $tertiaryUserName } | Measure-Object).Count -eq 0) {
-            return $tertiaryUserName.ToLower()
-        }
+    if ((Get-ADUser -Filter { SamAccountName -eq $tertiaryUserName } | Measure-Object).Count -eq 0) {
+        return $tertiaryUserName.ToLower()
     }
 }
