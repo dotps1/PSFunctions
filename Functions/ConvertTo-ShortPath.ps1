@@ -12,9 +12,11 @@
     https://github.com/dotps1/PSFunctions
 .ReleaseNotes 
     Initial Release.
+
 #>
 
 <#
+
 .Synopsis
     Converts a path to the 8.3 equivalent.
 .Description
