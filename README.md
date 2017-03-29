@@ -18,6 +18,16 @@ PS C:\> Get-Item $env:WinDir\System32\WindowsPowerShell\v1.0\powershell.exe | .\
 C:\Windows\System32\WINDOW~1\v1.0\powershell.exe
 ```
 
+### Enable-WindowsStore
+
+```
+PS C:\> Enable-WindowsStore
+
+PS C:\> Enable-WindowsStore -Credential (Get-Credential)
+
+PS C:\> Get-Credential | Enable-WindowsStore
+```
+
 ### Find-NthIndexOf
 
 ```

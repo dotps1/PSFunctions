@@ -12,6 +12,7 @@
     https://github.com/dotps1/PSFunctions
 .ReleaseNotes 
     Move escaping the regex value from begin block to the process block to handle better pipeline support.
+    
 #>
 
 <#

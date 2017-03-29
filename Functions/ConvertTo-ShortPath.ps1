@@ -34,6 +34,8 @@
 .Example
     PS C:\> Get-Item $env:WinDir\System32\WindowsPowerShell\v1.0\powershell.exe | .\ConvertTo-ShortPath.ps1
     C:\Windows\System32\WINDOW~1\v1.0\powershell.exe
+.Notes
+    This function requires a valid file path to do the conversion.
 .Link
     https://dotps1.github.io
 .Link
