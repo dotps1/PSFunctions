@@ -43,6 +43,23 @@ PS C:\> Find-NthIndexOf -Target "Hello World." -Value "w" -IgnoreCase
 6
 ```
 
+### Get-ADComputerSiteName
+
+```
+PS C:\> Get-ADComputerSiteName
+
+PSComputerName ADSiteName            
+-------------- ----------            
+MyComputer     Default-First-Site
+
+
+PS C:\> Get-ADComputer -Filter { Name -like '*Computer*' } | Get-ADComputerSiteName
+
+PSComputerName ADSiteName            
+-------------- ----------            
+MyComputer     Default-First-Site
+```
+
 ### Get-MsiPropertyValue
 
 ```
