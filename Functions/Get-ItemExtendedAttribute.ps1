@@ -121,17 +121,16 @@ process {
             $leaf
         )
         
+        $output = @()
         if ($PSBoundParameters.ContainsKey("Attribute")) {
             $value = $shellParent.GetDetailsOf(
                 $shellLeaf, $Attribute
             )
 
-            $output = [PSCustomObject]@{
+            $output += [PSCustomObject]@{
                 Attribute = $Attribute
                 Value = $value
             }
-
-            Write-Output -InputObject $output
         } else {
             for ($i = 1; $i -le 287; $i++) {
                 $value = $shellParent.GetDetailsOf(
@@ -139,21 +138,23 @@ process {
                 )
 
                 if (-not ([String]::IsNullOrEmpty($value))) {
-                    $output = [PSCustomObject]@{
+                    $output += [PSCustomObject]@{
                         Attribute = $i
                         Value = $value
                     }
-
-                    Write-Output -InputObject $output
                 }
             }
+        }
+
+        if ($null -ne $output) {
+            Write-Output -InputObject $output
         }
     }
 }
 
 end {
-    [System.Runtime.InteropServices.Marshal]::ReleaseComObject(
+    $null = [System.Runtime.InteropServices.Marshal]::ReleaseComObject(
         $shell
-    ) | Out-Null
+    )
     Remove-Variable -Name shell
 }
