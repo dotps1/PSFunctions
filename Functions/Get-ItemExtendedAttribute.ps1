@@ -1,7 +1,7 @@
 <#PSScriptInfo
 
 .Version
-    1.0
+    1.1
 .Guid
     c441b2d9-dcbc-4d91-9c36-5480348079e4
 .Author
@@ -11,7 +11,7 @@
 .ProjectUri
     https://github.com/dotps1/PSFunctions
 .ReleaseNotes 
-    Initial Release.
+    Added pipeline support.
     
 #>
 
@@ -30,7 +30,7 @@
     Path to the file or folder.
 .Parameter Attribute
     System.Int
-    Integer representation of the attribute value to retreive.
+    Integer representation of the attribute value to retrieve.
 .Example
     PS C:\> Get-ItemExtendedAttribute -Path .\googlechromestandaloneenterprise.msi -Attribute 24
 
@@ -83,7 +83,9 @@
 
 param (
     [Parameter(
-        Mandatory = $true
+        Mandatory = $true,
+        ValueFromPipeline = $true,
+        ValueFromPipelineByPropertyName = $true
     )]
     [ValidateScript({
         if (Test-Path -Path $_) {
