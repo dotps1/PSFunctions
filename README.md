@@ -43,6 +43,44 @@ PS C:\> Find-NthIndexOf -Target "Hello World." -Value "w" -IgnoreCase
 6
 ```
 
+### Get-ItemExtendedAttribute
+
+```
+PS C:\> Get-ItemExtendedAttribute -Path .\googlechromestandaloneenterprise.msi -Attribute 24
+
+Attribute Value
+--------- -----
+24 57.0.2987.98 Copyright 2011 Google Inc.
+
+
+PS C:\> Get-ItemExtendedAttribute -Path $env:WinDir
+
+Attribute Value
+--------- -----
+        2 File folder
+        3 3/24/2017 7:50 AM
+        4 7/16/2016 2:04 AM
+        5 3/24/2017 7:50 AM
+        6 D
+        8 Available offline
+        9 Unknown
+       10 TrustedInstaller
+       11 Folder
+       19 Unrated
+       50 58.4 GB
+       54 MyComputer (this PC)
+      158 Windows
+      162 33.0 GB
+      180 No
+      183 C:\
+      184 C:\
+      185 C:\
+      187 C:\Windows
+      189 File folder
+      195 Unresolved
+      247 ‎43%
+```
+
 ### Get-ADComputerSiteName
 
 ```
