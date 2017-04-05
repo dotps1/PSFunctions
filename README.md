@@ -23,7 +23,9 @@ C:\Windows\System32\WINDOW~1\v1.0\powershell.exe
 ```
 PS C:\> Enable-WindowsStore
 
+
 PS C:\> Enable-WindowsStore -Credential (Get-Credential)
+
 
 PS C:\> Get-Credential | Enable-WindowsStore
 ```
