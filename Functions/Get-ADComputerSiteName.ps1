@@ -63,7 +63,7 @@ param (
         ValueFromPipelineByPropertyName = $true
     )]
     [Alias(
-        'ComputerName'
+        "ComputerName"
     )]
     [String[]]
     $Name = $env:COMPUTERNAME
