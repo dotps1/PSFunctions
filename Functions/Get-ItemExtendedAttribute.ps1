@@ -155,8 +155,7 @@ process {
 }
 
 end {
-    $null = [System.Runtime.InteropServices.Marshal]::ReleaseComObject(
+    Out-Null -InputObject ([System.Runtime.InteropServices.Marshal]::ReleaseComObject(
         $shell
-    )
-    Remove-Variable -Name shell
+    ))
 }

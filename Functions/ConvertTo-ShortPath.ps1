@@ -82,9 +82,7 @@ process {
 }
 
 end {
-    # Clean up COM Object.
-    [System.Runtime.InteropServices.Marshal]::ReleaseComObject(
+    Out-Null -InputObject ([System.Runtime.InteropServices.Marshal]::ReleaseComObject(
         $fso
-    ) | Out-Null
-    Remove-Variable -Name fso
+    ))
 }

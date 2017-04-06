@@ -1,7 +1,7 @@
 <#PSScriptInfo
 
 .Version
-    1.0
+    1.1
 .Guid
     dc64634e-86a9-4ed5-bc7f-f2a55fa3bb0a
 .Author 
@@ -11,7 +11,7 @@
 .ProjectUri
     https://github.com/dotps1/PSFunctions
 .ReleaseNotes
-    Initial Release.
+    Move Out-Null cmdlets to left side of pipeline for reduced performance cost.
 
 #>
 
@@ -106,9 +106,9 @@ process {
                     "OpenView", "InvokeMethod", $null, $database, "SELECT Value FROM Property WHERE Property = '$propertyValue'"
                 )
 
-                $view.GetType().InvokeMember(
+                Out-Null -InputObject ($view.GetType().InvokeMember(
                     "Execute", "InvokeMethod", $null, $view, $null
-                ) | Out-Null
+                ))
 
                 $record = $view.GetType().InvokeMember(
                     "Fetch", "InvokeMethod", $null, $view, $null
@@ -121,10 +121,9 @@ process {
                 Add-Member -InputObject $output -Name $propertyValue -Value $value -MemberType NoteProperty
             }
 
-            # Close the database, else it will be locked.
-            $database.GetType().InvokeMember(
+            Out-Null -InputObject ($database.GetType().InvokeMember(
                 "Close", "InvokeMethod", $null, $view, $null
-            ) | Out-Null
+            ))
 
             Write-Output -InputObject $output
         } catch {
@@ -135,7 +134,7 @@ process {
 }
 
 end {
-    [System.Runtime.InteropServices.Marshal]::ReleaseComObject(
+    Out-Null -InputObject ([System.Runtime.InteropServices.Marshal]::ReleaseComObject(
         $windowsInstaller
-    ) | Out-Null
+    ))
 }
