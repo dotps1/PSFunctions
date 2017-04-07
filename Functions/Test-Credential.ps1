@@ -74,8 +74,9 @@ param (
     $Domain = $Credential.GetNetworkCredential().Domain
 )
 
-[System.Reflection.Assembly]::LoadWithPartialName("System.DirectoryServices.AccountManagement") |
-    Out-Null
+Out-Null -InputObject ([System.Reflection.Assembly]::LoadWithPartialName(
+    "System.DirectoryServices.AccountManagement"
+))
 
 $principalContext = New-Object System.DirectoryServices.AccountManagement.PrincipalContext(
     [System.DirectoryServices.AccountManagement.ContextType]::Domain, $Domain

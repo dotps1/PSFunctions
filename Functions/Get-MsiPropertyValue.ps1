@@ -117,7 +117,7 @@ process {
                 $value = $record.GetType().InvokeMember(
                     "StringData", "GetProperty", $null, $record, 1
                 )
-
+                
                 Add-Member -InputObject $output -Name $propertyValue -Value $value -MemberType NoteProperty
             }
 
