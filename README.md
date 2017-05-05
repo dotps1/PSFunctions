@@ -83,6 +83,23 @@ Attribute Value
       247 ‎43%
 ```
 
+### Get-LastLoggedOnUser
+
+```
+PS C:\> Get-LastLoggedOnUser
+
+PSComputerName LastUseTime         UserName        Loaded
+-------------- -----------         --------        ------
+localhost      5/5/2017 9:06:45 AM domain\username   True
+PS C:\> Get-LastLoggedOnUser -Name Server1, Server2 -Credential (Get-Credential)
+
+
+PSComputerName LastUseTime         UserName        Loaded
+-------------- -----------         --------        ------
+Server1        5/5/2017 9:06:45 AM domain\username   True
+Server1        5/5/2017 9:06:45 AM domain\username  False
+```
+
 ### Get-ADComputerSiteName
 
 ```
