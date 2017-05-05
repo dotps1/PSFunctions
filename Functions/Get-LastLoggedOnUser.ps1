@@ -1,9 +1,9 @@
 ﻿<#PSScriptInfo
 
 .Version
-    1.0
+    2.0
 .Guid
-    255f22ba-2bfb-42ca-b584-d9cbdb28e0b2
+    f994a5fb-c978-4e1a-b549-e64c3fab097b
 .Author 
     Thomas J. Malkewitz @dotps1
 .Tags 
@@ -11,7 +11,7 @@
 .ProjectUri
     https://github.com/dotps1/PSFunctions
 .ReleaseNotes
-    Initial Release.
+    Full refactor and added CimInstance support.
 
 #>
 
