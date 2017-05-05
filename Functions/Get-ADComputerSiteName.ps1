@@ -18,7 +18,7 @@
 .Synopsis
     Gets the ADSiteName for a computer.
 .Description 
-    Queries DNS to get the computers IPAddress then, returns the ADSiteName base on AD Sites and Services.'
+    Queries DNS to get the computers IPAddress then, returns the ADSiteName base on AD Sites and Services.
 .Inputs
     System.String
 .Outputs
