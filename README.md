@@ -202,3 +202,24 @@ Credential
 PS C:\> Test-Credential -Credential $credential
 True
 ```
+### Test-WannaCryVulnerability
+```
+PS C:\> Test-WannaCryVulnerability
+
+PSComputerName      : myrig
+OperatingSystem     : Microsoft Windows 7 Professional
+Vulnerable          : False
+AppliedHotFixIds    : KB4012212|KB4015546|KB4015549
+SMB1FeatureEnabled  : False
+SMB1ProtocolEnabled : False
+
+
+PS C:\> Get-ADComputer -Filter * -OrganizationalUnit OU=workstations,DC=domain,DC=org | Test-WannaCryVulnerability
+
+PSComputerName      : workstation
+OperatingSystem     : Microsoft Windows 7 Professional
+Vulnerable          : True
+AppliedHotFixIds    : 
+SMB1FeatureEnabled  : False
+SMB1ProtocolEnabled : True
+```
