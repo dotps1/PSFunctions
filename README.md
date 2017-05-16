@@ -91,8 +91,9 @@ PS C:\> Get-LastLoggedOnUser
 PSComputerName LastUseTime         UserName        Loaded
 -------------- -----------         --------        ------
 localhost      5/5/2017 9:06:45 AM domain\username   True
-PS C:\> Get-LastLoggedOnUser -Name Server1, Server2 -Credential (Get-Credential)
 
+
+PS C:\> Get-LastLoggedOnUser -Name Server1, Server2 -Credential (Get-Credential)
 
 PSComputerName LastUseTime         UserName        Loaded
 -------------- -----------         --------        ------
