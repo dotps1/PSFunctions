@@ -4,7 +4,7 @@
 
 Repository to hold script-functions that are published to the PowerShell Gallery.
 These are functions that I haven't really made into a module yet or don't really fit into any of my other custom modules.
-So they are contained in single .ps1 files that can be installed with `Install-Script`.
+So they are contained in single .ps1 files that can be installed from the [PowerShell Gallery](https://powershellgallery.com) using `Install-Script -Name <Function-Name>`, and used like native PowerShell cmdlets.
 
 ---
 
