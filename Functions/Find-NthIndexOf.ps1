@@ -44,7 +44,7 @@
     PS C:\> ($dn = "CN=dotps1,OU=Users,DC=domain,DC=org").SubString((Find-NthIndexOf -Target $dn -Value "=" -Nth 2) - 2)
     OU=Users,DC=domain,DC=org
 .Example
-    PS C:\> Find-NthIndexOf -Target "Hello World." -Value "w" -IgnoreCase
+    PS C:\> Find-NthIndexOf -Target "Hello World." -Value "w" -IgnoreCase -Nth 1
     6
 .Notes
     Returns -1 if the char does not exist, or if nth is out of range.

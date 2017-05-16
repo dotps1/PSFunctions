@@ -9,6 +9,7 @@ So they are contained in single .ps1 files that can be installed using `Install-
 ---
 
 ### ConvertTo-ShortPath
+Converts each element of a file object path to the 8.3 path and return the short path string. 
 
 ```
 PS C:\Users\dotps1\Documents\GitHub\PSFunctions\Functions> ConvertTo-ShortPath
@@ -18,7 +19,10 @@ PS C:\> Get-Item $env:WinDir\System32\WindowsPowerShell\v1.0\powershell.exe | .\
 C:\Windows\System32\WINDOW~1\v1.0\powershell.exe
 ```
 
+---
+
 ### Enable-WindowsStore
+Sets the registry that disables the Windows Store to "0", which will temporarily allow access to the Windows Store.
 
 ```
 PS C:\> Enable-WindowsStore
@@ -30,7 +34,10 @@ PS C:\> Enable-WindowsStore -Credential (Get-Credential)
 PS C:\> Get-Credential | Enable-WindowsStore
 ```
 
+---
+
 ### Find-NthIndexOf
+Finds the nth index of a char in a string, returns -1 if the char does not exist, or if nth is out of range.
 
 ```
 PS C:\> Find-NthIndexOf -Target "CN=me,OU=Users,DC=domain,DC=org" -Value "=" -Nth 2
@@ -41,11 +48,34 @@ PS C:\> ($dn = "CN=dotps1,OU=Users,DC=domain,DC=org").SubString((Find-NthIndexOf
 OU=Users,DC=domain,DC=org
 
 
-PS C:\> Find-NthIndexOf -Target "Hello World." -Value "w" -IgnoreCase
+PS C:\> Find-NthIndexOf -Target "Hello World." -Value "w" -IgnoreCase -Nth 1
 6
 ```
 
+---
+
+### Get-ADComputerSiteName
+Queries DNS to get the computers IPAddress then, returns the ADSiteName base on AD Sites and Services.
+
+```
+PS C:\> Get-ADComputerSiteName
+
+PSComputerName ADSiteName            
+-------------- ----------            
+MyComputer     Default-First-Site
+
+
+PS C:\> Get-ADComputer -Filter { Name -like '*Computer*' } | Get-ADComputerSiteName
+
+PSComputerName ADSiteName            
+-------------- ----------            
+MyComputer     Default-First-Site
+```
+
+---
+
 ### Get-ItemExtendedAttribute
+Get extended item metadeta attribute value from an item using COM and referenced by attribute number.
 
 ```
 PS C:\> Get-ItemExtendedAttribute -Path .\googlechromestandaloneenterprise.msi -Attribute 24
@@ -83,7 +113,10 @@ Attribute Value
       247 ‎43%
 ```
 
+---
+
 ### Get-LastLoggedOnUser
+Gets the last not special user to have a loaded profile on a given system.
 
 ```
 PS C:\> Get-LastLoggedOnUser
@@ -101,24 +134,10 @@ Server1        5/5/2017 9:06:45 AM domain\username   True
 Server1        5/5/2017 9:06:45 AM domain\username  False
 ```
 
-### Get-ADComputerSiteName
-
-```
-PS C:\> Get-ADComputerSiteName
-
-PSComputerName ADSiteName            
--------------- ----------            
-MyComputer     Default-First-Site
-
-
-PS C:\> Get-ADComputer -Filter { Name -like '*Computer*' } | Get-ADComputerSiteName
-
-PSComputerName ADSiteName            
--------------- ----------            
-MyComputer     Default-First-Site
-```
+---
 
 ### Get-MsiPropertyValue
+Opens a Windows Installer Database (.msi) and queries for the specified property value.
 
 ```
 PS C:\> Get-MsiPropertyValue -Path .\jre1.8.0_121.msi -Property ProductVersion, ProductCode
@@ -136,7 +155,10 @@ jre1.8.0_111.msi 8.0.1110.14    {26A24AE4-039D-4CA4-87B4-2F32180111F0}
 jre1.8.0_121.msi 8.0.1210.13    {26A24AE4-039D-4CA4-87B4-2F32180121F0}
 ```
 
+---
+
 ### Get-ProgramUninstallString
+Gets the uninstall string for a program, can be filtered to a key word of the programs display name.
 
 ```
 PS C:\> Get-ProgramUninstallString -Name "Google Chrome"
@@ -154,7 +176,13 @@ Google Chrome        57.0.2987.110 {4F711ED6-6E14-3607-A3CA-E3282AFE87B6} MsiExe
 Google Update Helper 1.3.32.7      {60EC980A-BDA2-4CB6-A427-B07A5498B4CA} MsiExec.exe /I{60EC980A-BDA2-4CB6-A427-B07A5498B4CA}
 ```
 
+---
+
 ### New-ADUserName
+Create a new username with the following order until a unique Username is found.
+1. First Initial Last Name.
+2. First Initial First Middle Initial Last Name.
+3. Iterates First Name adding each Char until a unique Username is found.
 
 ```
 PS C:\> New-Username -FirstName John -LastName Doe
@@ -167,7 +195,10 @@ PS C:\> New-Username -FirstName Jane -LastName Doe -MiddleName Ala
 jadoe
 ```
 
+---
+
 ### New-NetStaticIPAddress
+Removes the current NetIPAddress and NetRoute on a given NetAdapter.  Sets a new Static NetIPAddress and adds DNS Server values if provided.
 
 ```
 PS C:\> New-NetStaticIPAddress -InterfaceIndex 3 -IPAddress 192.168.1.1 -DefaultGateway 192.168.1.0 -PrefixLength 24 -DnsServerAddress 192.168.1.0 -Confirm:$false
@@ -188,7 +219,10 @@ SkipAsSource      : False
 PolicyStore       : ActiveStore
 ```
 
+---
+
 ### Test-Credential
+Simulates an Authentication Request in a Domain environment using a PSCredential Object. Returns $true if both Username and Password pair are valid. 
 
 ```
 PS C:\> Test-Credential -Credential (Get-Credential)
@@ -203,7 +237,12 @@ Credential
 PS C:\> Test-Credential -Credential $credential
 True
 ```
+
+---
+
 ### Test-WannaCryVulnerability
+Test for applicable patches to prevent the WannaCry malware.  Tests for SMB1 protocol and component.
+
 ```
 PS C:\> Test-WannaCryVulnerability
 
@@ -215,7 +254,7 @@ SMB1FeatureEnabled  : False
 SMB1ProtocolEnabled : False
 
 
-PS C:\> Get-ADComputer -Filter * -OrganizationalUnit OU=workstations,DC=domain,DC=org | Test-WannaCryVulnerability
+PS C:\> Get-ADComputer -Identity workstation | Test-WannaCryVulnerability
 
 PSComputerName      : workstation
 OperatingSystem     : Microsoft Windows 7 Professional

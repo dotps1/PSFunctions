@@ -25,8 +25,7 @@
 .Synopsis
     Sets a static IP Address on a Network Adapter. 
 .Description
-    Removes the current NetIPAddress and NetRoute on a given NetAdapter.
-    Sets a new Static NetIPAddress and adds DNS Server values if provided.
+    Removes the current NetIPAddress and NetRoute on a given NetAdapter.  Sets a new Static NetIPAddress and adds DNS Server values if provided.
 .Inputs
     Microsoft.Management.Infrastructure.CimSession
     Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetIPAddress.AddressFamily
