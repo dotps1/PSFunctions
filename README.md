@@ -250,7 +250,7 @@ PSComputerName         : myrig
 OperatingSystemCaption : Microsoft Windows 7 Professional
 OperatingSystemVersion : 6.1.7601
 Vulnerable             : False
-AppliedHotFixIds       : KB4012212|KB4015546|KB4015549
+AppliedHotFixID        : KB4012212|KB4015546|KB4015549
 SMB1FeatureEnabled     : False
 SMB1ProtocolEnabled    : False
 
@@ -261,7 +261,7 @@ PSComputerName         : workstation
 OperatingSystemCaption : Microsoft Windows 7 Professional
 OperatingSystemVersion : 6.1.7601
 Vulnerable             : True
-AppliedHotFixIds       : 
+AppliedHotFixID        : 
 SMB1FeatureEnabled     : False
 SMB1ProtocolEnabled    : True
 ```
