@@ -74,6 +74,36 @@ MyComputer     Default-First-Site
 
 ---
 
+### Get-EternalBlueVulnerabilityInformation
+Test for applicable patches to prevent the WannaCry malware.  Tests for SMB1 protocol and component.
+
+```
+PS C:\> Get-EternalBlueVulnerabilityStatistics
+
+PSComputerName         : my-win7-rig
+OperatingSystemCaption : Microsoft Windows 7 Professional
+OperatingSystemVersion : 6.1.7601
+LastBootUpTime         : 5/14/2017 3:38:38 PM
+AppliedHotFixID        : KB4012212;KB4015546;KB4015549
+SMB1FeatureEnabled     : False
+SMB1ProtocolEnabled    : False
+Port139Enabled         : True
+Port445Enabled         : True
+
+
+PS C:\> Get-ADComputer -Identity domain-win7-rig | Get-EternalBlueVulnerabilityStatistics
+
+PSComputerName         : domain-win7-rig
+OperatingSystemCaption : Microsoft Windows 7 Professional
+OperatingSystemVersion : 6.1.7601
+LastBootUpTime         : 3/14/2017 3:38:38 PM
+AppliedHotFixID        : 
+SMB1FeatureEnabled     : False
+SMB1ProtocolEnabled    : True
+Port139Enabled         : True
+Port445Enabled         : True
+```
+
 ### Get-ItemExtendedAttribute
 Get extended item metadeta attribute value from an item using COM and referenced by attribute number.
 
@@ -241,7 +271,8 @@ True
 ---
 
 ### Test-WannaCryVulnerability
-Test for applicable patches to prevent the WannaCry malware.  Tests for SMB1 protocol and component.
+
+_DEPRICATED, USE GET-ETERNALBULEVULNERABILITYSTATISTICS_
 
 ```
 PS C:\> Test-WannaCryVulnerability
