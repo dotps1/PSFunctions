@@ -74,8 +74,8 @@ MyComputer     Default-First-Site
 
 ---
 
-### Get-EternalBlueVulnerabilityInformation
-Test for applicable patches to prevent the WannaCry malware.  Tests for SMB1 protocol and component.
+### Get-EternalBlueVulnerabilityStatistics
+Test for applicable patches to prevent the WannaCry/WannaCrypt malware.  Tests for the SMB1 protocol and component.
 
 ```
 PS C:\> Get-EternalBlueVulnerabilityStatistics
