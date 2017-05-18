@@ -270,7 +270,7 @@ True
 
 ---
 
-### Test-WannaCryVulnerability
+### ~~Test-WannaCryVulnerability~~
 
 _DEPRICATED, USE GET-ETERNALBULEVULNERABILITYSTATISTICS_
 
