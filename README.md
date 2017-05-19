@@ -267,34 +267,3 @@ Credential
 PS C:\> Test-Credential -Credential $credential
 True
 ```
-
----
-
-### ~~Test-WannaCryVulnerability~~
-
-_DEPRICATED, USE GET-ETERNALBULEVULNERABILITYSTATISTICS_
-
-```
-PS C:\> Test-WannaCryVulnerability
-
-PSComputerName         : myrig
-OperatingSystemCaption : Microsoft Windows 7 Professional
-OperatingSystemVersion : 6.1.7601
-LastBootUpTime         : 5/14/2017 3:38:38 PM
-Vulnerable             : False
-AppliedHotFixID        : KB4012212|KB4015546|KB4015549
-SMB1FeatureEnabled     : False
-SMB1ProtocolEnabled    : False
-
-
-PS C:\> Get-ADComputer -Identity workstation | Test-WannaCryVulnerability
-
-PSComputerName         : workstation
-OperatingSystemCaption : Microsoft Windows 7 Professional
-OperatingSystemVersion : 6.1.7601
-LastBootUpTime         : 5/14/2017 3:38:38 PM
-Vulnerable             : True
-AppliedHotFixID        : 
-SMB1FeatureEnabled     : False
-SMB1ProtocolEnabled    : True
-```
