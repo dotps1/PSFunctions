@@ -146,11 +146,9 @@ param (
     [String]
     $IPAddress,
 
-    [Parameter(
-        Mandatory = $true
-    )]
+    [Parameter()]
     [String]
-    $DefaultGateway,
+    $DefaultGateway = [String]::Empty,
 
     [Parameter(
         Mandatory = $true
