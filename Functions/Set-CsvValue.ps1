@@ -1,7 +1,7 @@
 ﻿<#PSScriptInfo
 
 .Version
-    1.0
+    1.1
 .Guid
     96c125d3-1a20-4282-b569-0da33be2d8c3
 .Author
@@ -44,6 +44,7 @@
     PS C:\> Set-CsvValue -Path .\my.csv -Key "ComputerName" -Value "MyComputer" -Hashtable @{ Owner = "dotps1"; Make = "Dell"; Model = "XPS 15" }
 .Notes
     If there are multiple values in the column used to key off, each row will be updated.  Use a unique column value.
+    Shout out to Miles Gratz (http://www.serveradventures.com/) for initial example for how to complete this.
 .Link
     https://dotps1.github.io
 .Link
