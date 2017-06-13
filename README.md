@@ -251,6 +251,18 @@ PolicyStore       : ActiveStore
 
 ---
 
+### Set-CsvValue
+Sets a value or multiple values in the same row in a comma separated value.
+
+```
+PS C:\> Set-CsvValue -Path .\my.csv -Key "ComputerName" -Value "MyComputer" -Hashtable @{ Owner = "dotps1" }
+
+
+PS C:\> Set-CsvValue -Path .\my.csv -Key "ComputerName" -Value "MyComputer" -Hashtable @{ Owner = "dotps1"; Make = "Dell"; Model = "XPS 15" }
+```
+
+---
+
 ### Test-Credential
 Simulates an Authentication Request in a Domain environment using a PSCredential Object. Returns $true if both Username and Password pair are valid. 
 
