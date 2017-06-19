@@ -47,7 +47,7 @@
     PSComputerName LastUseTime         UserName        Loaded
     -------------- -----------         --------        ------
     Server1        5/5/2017 9:06:45 AM domain\username   True
-    Server1        5/5/2017 9:06:45 AM domain\username  False
+    Server2        5/5/2017 9:06:45 AM domain\username  False
 .Notes
     Using the ByComputerName parameter set uses WinRM.
 .Link

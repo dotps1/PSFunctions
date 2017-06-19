@@ -161,7 +161,7 @@ PS C:\> Get-LastLoggedOnUser -Name Server1, Server2 -Credential (Get-Credential)
 PSComputerName LastUseTime         UserName        Loaded
 -------------- -----------         --------        ------
 Server1        5/5/2017 9:06:45 AM domain\username   True
-Server1        5/5/2017 9:06:45 AM domain\username  False
+Server2        5/5/2017 9:06:45 AM domain\username  False
 ```
 
 ---
@@ -176,7 +176,7 @@ Name             ProductVersion ProductCode
 jre1.8.0_121.msi 8.0.1210.13    {26A24AE4-039D-4CA4-87B4-2F32180121F0}
 
 
-PS C:\> Get-ChildItem -Path ".\Installers" -Filter "*.msi" | Select -ExpandProperty FullName | Get-MsiPropertyValue -Property ProductVersion
+PS C:\> Get-ChildItem -Path ".\Installers" -Filter "*.msi" | Select -ExpandProperty FullName | Get-MsiPropertyValue -Property ProductVersion, ProductCode
     
 Name             ProductVersion ProductCode
 ----             -------------- -----------
