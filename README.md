@@ -74,6 +74,34 @@ MyComputer     Default-First-Site
 
 ---
 
+### Get-ApplockerWinEvent
+Gets Applocker events based on given critera from the local or remote machine(s).
+
+```
+PS C:\> Get-ApplockerWinEvent -MaxEvents 2
+
+
+      ProviderName: Microsoft-Windows-AppLocker
+
+TimeCreated                     Id LevelDisplayName Message
+-----------                     -- ---------------- -------
+10/5/2017 8:17:59 AM          8005 Information      %OSDRIVE%\USERS\dotps1\DOCUMENTS\GITHUB\PSFUNCTIONS\FUNCTIONS\GET-APPLOCKERWINEVENT.PS1 was allowed to run.
+10/5/2017 8:15:10 AM          8002 Information      %PROGRAMFILES%\GIT\MINGW64\BIN\GIT.EXE was allowed to run.
+
+
+PS C:\> Get-ApplockerWinEvent -MaxEvents 2 -Oldest -LogName ExeAndDll -Credential (Get-Credential) -ComputerName myremotebox
+
+
+      ProviderName: Microsoft-Windows-AppLocker
+
+TimeCreated                     Id LevelDisplayName Message
+-----------                     -- ---------------- -------
+10/5/2017 7:33:43 AM          8002 Information      %OSDRIVE%\USERS\dotps1\APPDATA\LOCAL\MICROSOFT\ONEDRIVE\ONEDRIVESTANDALONEUPDATER.EXE was prevented from running.
+10/5/2017 7:33:43 AM          8002 Information      %PROGRAMFILES%\GIT\CMD\GIT.EXE was allowed to run.
+```
+
+---
+
 ### Get-EternalBlueVulnerabilityStatistics
 Test for applicable patches to prevent the WannaCry/WannaCrypt malware.  Tests for the SMB1 protocol and component.
 
@@ -103,6 +131,8 @@ SMB1ProtocolEnabled    : True
 Port139Enabled         : True
 Port445Enabled         : True
 ```
+
+---
 
 ### Get-ItemExtendedAttribute
 Get extended item metadeta attribute value from an item using COM and referenced by attribute number.
