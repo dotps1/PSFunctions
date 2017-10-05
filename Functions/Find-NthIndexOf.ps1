@@ -36,6 +36,7 @@
     System.Int
     the occurrence of the character to find.
 .Parameter IgnoreCase
+    System.Management.Automation.SwitchParameter
     Preforms a case insensitive regex match.
 .Example
     PS C:\> Find-NthIndexOf -Target "CN=me,OU=Users,DC=domain,DC=org" -Value "=" -Nth 2
