@@ -8,6 +8,16 @@ So they are contained in single .ps1 files that can be installed using `Install-
 
 ---
 
+### Convert-LovibondToSrm
+Converts the Lovibond color value of malt to its respective SRM value.
+
+```
+PS C:\> Convert-LovibondToSrm -Lovibond 3.5
+3.98
+```
+
+---
+
 ### ConvertTo-ShortPath
 Converts each element of a file object path to the 8.3 path and return the short path string. 
 
@@ -74,11 +84,11 @@ MyComputer     Default-First-Site
 
 ---
 
-### Get-ApplockerWinEvent
-Gets Applocker events based on given critera from the local or remote machine(s).
+### Get-AppLockerWinEvent
+Gets AppLocker events based on given critera from the local or remote machine(s).
 
 ```
-PS C:\> Get-ApplockerWinEvent -MaxEvents 2
+PS C:\> Get-AppLockerWinEvent -MaxEvents 2
 
 
       ProviderName: Microsoft-Windows-AppLocker
@@ -89,7 +99,7 @@ TimeCreated                     Id LevelDisplayName Message
 10/5/2017 8:15:10 AM          8002 Information      %PROGRAMFILES%\GIT\MINGW64\BIN\GIT.EXE was allowed to run.
 
 
-PS C:\> Get-ApplockerWinEvent -MaxEvents 2 -Oldest -LogName ExeAndDll -Credential (Get-Credential) -ComputerName myremotebox
+PS C:\> Get-AppLockerWinEvent -MaxEvents 2 -Oldest -LogName ExeAndDll -Credential (Get-Credential) -ComputerName myremotebox
 
 
       ProviderName: Microsoft-Windows-AppLocker

@@ -7,7 +7,7 @@
 .Author
     Thomas J. Malkewitz @dotps1
 .Tags
-    Applocker, WinEvent
+    AppLocker, WinEvent
 .ProjectUri
     https://github.com/dotps1/PSFunctions
 
@@ -16,19 +16,19 @@
 <#
 
 .Synopsis
-    Gets Applocker related events.
+    Gets AppLocker related events.
 .Description 
-    Gets Applocker events based on given critera from the local or remote machine(s).
+    Gets AppLocker events based on given critera from the local or remote machine(s).
 .Inputs
     System.String
 .Outputs
     System.Diagnostics.Eventing.Reader.EventLogRecord
 .Parameter Name
     System.String
-    The name of the system to get Applocker data against.
+    The name of the system to get AppLocker data against.
 .Parameter EventType
     System.String
-    The type of Applocker events to get, the default value is all events from the Microsoft-Windows-AppLocker log provider.
+    The type of AppLocker events to get, the default value is all events from the Microsoft-Windows-AppLocker log provider.
 .Parameter LogName
     System.String
     The specific log to pull events from, the default value is all logs from the Microsoft-Windows-AppLocker log provider.
@@ -48,7 +48,7 @@
     System.DateTime
     The ending range to get EventLogRecord objects from.
 .Example
-    PS C:\> Get-ApplockerWinEvent -MaxEvents 2
+    PS C:\> Get-AppLockerWinEvent -MaxEvents 2
 
 
         ProviderName: Microsoft-Windows-AppLocker
@@ -58,7 +58,7 @@
     10/5/2017 8:17:59 AM          8005 Information      %OSDRIVE%\USERS\dotps1\DOCUMENTS\GITHUB\PSFUNCTIONS\FUNCTIONS\GET-APPLOCKERWINEVENT.PS1 was allowed to run.
     10/5/2017 8:15:10 AM          8002 Information      %PROGRAMFILES%\GIT\MINGW64\BIN\GIT.EXE was allowed to run.
 .Example
-    PS C:\> Get-ApplockerWinEvent -MaxEvents 2 -Oldest -LogName ExeAndDll -Credential (Get-Credential) -ComputerName myremotebox
+    PS C:\> Get-AppLockerWinEvent -MaxEvents 2 -Oldest -LogName ExeAndDll -Credential (Get-Credential) -ComputerName myremotebox
 
 
         ProviderName: Microsoft-Windows-AppLocker
@@ -73,7 +73,7 @@
 .Link
     https://dotps1.github.io
 .Link
-    https://www.powershellgallery.com/packages/Get-ApplockerWinEvent
+    https://www.powershellgallery.com/packages/Get-AppLockerWinEvent
 .Link
     https://grposh.github.io
 
