@@ -14,7 +14,7 @@
     https://github.com/dotps1/PSFunctions
 .ReleaseNotes 
     Initial Release.
-.ExternalModuleDependancies
+.ExternalModuleDependencies
     VirtualMachineManager
 
 #>
