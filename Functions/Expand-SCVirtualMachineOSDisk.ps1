@@ -3,17 +3,17 @@
 <#PSScriptInfo
 
 .Version
-    1.0
+    1.1
 .Guid
     1badb9c5-8b26-4184-ab23-9e2de92306e7
 .Author
     Thomas Malkewitz @dotps1
 .Tags
-    WindowsStore, Registry
+    VirtualMachineManager, VMM, SCVMM, HardDisk
 .ProjectUri
     https://github.com/dotps1/PSFunctions
 .ReleaseNotes 
-    Initial Release.
+    Fix tag metadata values.
 .ExternalModuleDependencies
     VirtualMachineManager
 
