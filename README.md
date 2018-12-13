@@ -46,6 +46,28 @@ PS C:\> Get-Credential | Enable-WindowsStore
 
 ---
 
+### Expand-SCVirtualMachineOSDisk
+Using information from Virtual Machine Manager and CIM, this cmdlet adds space to the virtual machines vhdx file and expands the partion.
+
+```
+PS C:\> Expand-SCVirtualMachineOSDisk -Name MyVirtualMachine
+
+Name: MyVirtualMachine
+OSDriveLetter: C
+OSPartitionPreviousSizeGB: 40
+OSPartitionNewSizeGB: 50
+
+
+PS C:\> "MyVirtualMachine" | Expand-SCVirtualMachineOSDisk -AmmountToAddGB 25
+
+Name: MyVirtualMachine
+OSDriveLetter: C:
+OSPartitionPreviousSizeGB: 25
+OSPartitionNewSizeGB: 50
+```
+
+---
+
 ### Find-NthIndexOf
 Finds the nth index of a char in a string, returns -1 if the char does not exist, or if nth is out of range.
 
@@ -287,6 +309,35 @@ ValidLifetime     : Infinite ([TimeSpan]::MaxValue)
 PreferredLifetime : Infinite ([TimeSpan]::MaxValue)
 SkipAsSource      : False
 PolicyStore       : ActiveStore
+```
+
+---
+
+### Receive-GoogleChromeEnterpriseMsi.ps1
+Gets the Latest version of the Google Chrome for Enterprise msi.
+
+```
+PS C:\> Get-GoogleChromeMsiInstaller
+
+
+      Directory: C:\Users\dotps1\Downloads
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----       12/12/2018   4:11 PM       55500800 googlechromestandaloneenterprise.msi
+-a----       12/12/2018   4:11 PM       56463360 googlechromestandaloneenterprise64.msi
+
+
+PS C:\> Get-GoogleChromeMsiInstaller -Path C:\Temp -Architecture x86
+      
+
+      Directory: C:\Users\dotps1\Downloads
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----       12/12/2018   4:11 PM       55500800 googlechromestandaloneenterprise.msi
 ```
 
 ---
