@@ -166,6 +166,30 @@ Port445Enabled         : True
 
 ---
 
+### Get-FolderSize
+Enumerates all sub folders and file of a directory returning the entire folder structure size.
+
+```
+PS C:\> Get-FolderSize -Path C:\Users\tomohulk\Documents
+
+Path                          Size(MB)
+----                          --------
+C:\Users\tomohulk\Documents 9732.33304
+
+
+PS C:\> Get-ChildItem -Path C:\Usuers\tomohulk\Documents -Directory | Get-FolderSize -Unit MB
+
+Path                                                 Size(MB)
+----                                                 --------
+C:\Users\tomohulk\Documents\Custom Office Templates         0
+C:\Users\tomohulk\Documents\GitHub                  211.29266
+C:\Users\tomohulk\Documents\GitLab                    4.45472
+C:\Users\tomohulk\Documents\My Received Files         0.24156
+C:\Users\tomohulk\Documents\WindowsPowerShell         0.07872
+```
+
+---
+
 ### Get-ItemExtendedAttribute
 Get extended item metadeta attribute value from an item using COM and referenced by attribute number.
 
