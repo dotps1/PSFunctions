@@ -72,7 +72,7 @@ param (
 
     [Parameter()]
     [ValidateSet(
-        "KB","MB","GB"
+        "KB","MB","GB", "TB"
     )]
     $Unit = "MB"
 )
@@ -84,7 +84,7 @@ process {
             if ($item.PSIsContainer) {
                 $measure = Get-ChildItem $pathValue -Recurse -Force -ErrorAction SilentlyContinue | 
                     Measure-Object -Property Length -Sum
-                $sum = [Math]::Round( ($measure.Sum / "1$Unit"), 5)
+                $sum = [Math]::Round( ($measure.Sum / "1$Unit"), 2 )
                 [PSCustomObject]@{
                     "Path" = $item.FullName
                     "Size($Unit)" = $sum
